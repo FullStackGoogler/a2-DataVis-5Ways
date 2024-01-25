@@ -27,7 +27,7 @@
                 `translate(${margin.left}, ${margin.top})`);
     
     //Read the data
-    d3.csv("penglings.csv").then( function(data) {
+    d3.csv("../penglings.csv").then( function(data) {
     
         // Add X axis
         const x = d3.scaleLinear()
@@ -96,7 +96,9 @@
         .on("mousemove", mousemove )
         .on("mouseleave", mouseleave )
     
-    })
+    }).catch(function(error) {
+        console.error("Error:", error);
+    });
 </script>
 
 </body>
